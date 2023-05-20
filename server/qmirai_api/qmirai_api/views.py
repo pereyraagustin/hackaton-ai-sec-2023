@@ -6,19 +6,14 @@ from bs4 import BeautifulSoup
 
 class TextProcessingView(APIView):
 
-    def extract_text_from_html(html_content):
-        # Create a BeautifulSoup object
-        soup = BeautifulSoup(html_content, 'html.parser')
-        
-        # Extract the text from the HTML
-        text = soup.get_text()
-        
-        return text
-
     def post(self, request, format=None):
         html = request.data.get('text', None)
-        text = extract_text_from_html(html)
-        print(text)
+        
+        # Create a BeautifulSoup object
+        soup = BeautifulSoup(html, 'html.parser')
+        # Extract the text from the HTML
+        text = soup.get_text()
+
         if text is None:
             return Response({"error": "No text provided"}, status=400)
 

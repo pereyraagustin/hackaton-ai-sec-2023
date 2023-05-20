@@ -1,2 +1,2 @@
 #!/bin/bash
-curl -X POST -H "Content-Type: application/json" -d '{"text":"El presidente de México vive en el Palacio Nacional."}' http://localhost:8000/process_text/
+curl -X POST -H "Content-Type: application/json" -d '{"text":"<p>Hola Juan como estás, DNI 40800404 </p>"}' http://localhost:8000/process_text/
