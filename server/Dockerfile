@@ -18,4 +18,4 @@ EXPOSE 8000
 ENTRYPOINT [ "python" ]
 
 # Ejecuta el servidor Python
-CMD ["manage.py", "runserver"]
+CMD ["qmirai_api/manage.py", "runserver"]
